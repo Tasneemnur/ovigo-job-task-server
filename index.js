@@ -49,7 +49,7 @@ async function run() {
   const postsCollection = client.db("travellersDB").collection("posts");
 
   try {
-    await client.connect();
+    // await client.connect();
 
     app.post("/jwt", (req, res) => {
       const user = req.body;
@@ -108,10 +108,10 @@ async function run() {
       const result = await communitiesCollection.insertOne(community);
       res.send(result);
     });
-    await client.db("admin").command({ ping: 1 });
-    console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!"
-    );
+    // await client.db("admin").command({ ping: 1 });
+    // console.log(
+    //   "Pinged your deployment. You successfully connected to MongoDB!"
+    // );
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
